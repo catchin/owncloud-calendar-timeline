@@ -5,7 +5,7 @@ function onLoad() {
     Timeline.createBandInfo({
       eventSource:    eventSource,
       width:          "70%", 
-      date:           "Jun 28 2006 00:00:00 GMT",
+      date:           "2008-06-28 00:00:00",
       intervalUnit:   Timeline.DateTime.MONTH, 
       intervalPixels: 100
     }),
@@ -13,7 +13,7 @@ function onLoad() {
       overview:       true,
       eventSource:    eventSource,
       width:          "30%", 
-      date:           "Jun 28 2006 00:00:00 GMT",
+      date:           "2008-06-28 00:00:00",
       intervalUnit:   Timeline.DateTime.YEAR, 
       intervalPixels: 200
     })
@@ -22,7 +22,7 @@ function onLoad() {
   bandInfos[1].highlight = true;
   tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
 
-  Timeline.loadXML("example1.xml", function(xml, url) { eventSource.loadXML(xml, url); });
+  Timeline.loadXML("calendar.xml", function(xml, url) { eventSource.loadXML(xml, url); });
 }
 
 var resizeTimerID = null;
