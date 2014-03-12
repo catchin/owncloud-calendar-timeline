@@ -22,12 +22,16 @@ class Generator:
 		self.xml.data.open()
 		for startdate, enddate, summary, data in ps():
 			if startdate != None and len(summary) > 0:
+				summary = self.myescape(summary)
 				if enddate - startdate <= datetime.timedelta(hours=24):
-					self.xml.event(escape(summary), start=str(startdate), end=str(enddate), title=escape(summary))
+					self.xml.event(summary, start=str(startdate), end=str(enddate), title=summary)
 				else:
-					self.xml.event(escape(summary), start=str(startdate), end=str(enddate), isDuration="true", title=escape(summary))
+					self.xml.event(summary, start=str(startdate), end=str(enddate), isDuration="true", title=summary)
 		self.xml.data.close()
 		return self.xml
+
+	def myescape(self, text):
+		return escape(text.replace('\\',''))
 
 	def write(self, outfile):
 		with open(outfile, "w") as f:
