@@ -41,10 +41,10 @@ class Generator:
 		self.db = postgresql.open(sqlLocator)
 
 if __name__ == "__main__":
-	outfile = sys.argv[1]
+	outfile = "calendar.xml"
 	g = Generator()
 	g.read()
 	g.write(outfile)
-	print("Written to %s." % outfile)
+	print("Calendar data written to %s" % outfile)
 	
 
