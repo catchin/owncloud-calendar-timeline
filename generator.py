@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import postgresql
-from lxml.builder import ElementMaker
+import markup
 
 class Generator:
 	def __init__(self):
@@ -14,13 +14,16 @@ class Generator:
 				join oc_clndr_calendars c on o.calendarid=c.id 
 				where userid='fabi' 
 				order by startdate asc""")
-		E = ElementMaker()
-		DATA = E.data
-		EVENT = E.event
 
+		xml = markup.page(mode='xml')
+		xml.init(encoding='UTF-8')
+		xml.data.open()
 		for startdate, enddate, summary, data in ps():
 			if startdate != None and len(summary) > 0:
-				print(startdate)
+				xml.event(start=str(startdate), end=str(enddate), isDuration=True, title=summary)
+		xml.data.close()
+		print(xml)
+		return xml
 
 	def _openSql(self, sqlLocator):
 		self.db = postgresql.open(sqlLocator)

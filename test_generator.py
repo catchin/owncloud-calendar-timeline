@@ -7,7 +7,7 @@ class TestGenerator(unittest.TestCase):
 		self.assertTrue(Generator())
 
 	def testRead(self):
-		self.assertTrue(Generator().read())
+		self.assertNotNone(Generator().read())
 
 if __name__ == "__main__":
 	unittest.main()
