@@ -13,7 +13,8 @@ Prerequisites
 * python3-postgresql
 
 This should do it:
-    apt-get install python3 python3-markupsafe python3-postgresql
+
+  `apt-get install python3 python3-markupsafe python3-postgresql`
 
 
 How to use
