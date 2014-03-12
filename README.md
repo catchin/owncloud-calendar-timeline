@@ -23,8 +23,10 @@ How to use
 * Generate calendar.xml file:
     ./generator.py
 * view timeline.html in a web browser, e.g.:
+
     python -m http.server
     http://localhost:8000/
+
   (see https://github.com/mrdoob/three.js/wiki/How-to-run-things-locally)
 
 
