@@ -20,13 +20,8 @@ How to use
 ----------
 
 * Modify the sql parameters in generator.py if needed
-* Generate calendar.xml file:
-    ./generator.py
-* view timeline.html in a web browser, e.g.:
-
-    python -m http.server
-    http://localhost:8000/
-
+* Generate calendar.xml file: `./generator.py`
+* view timeline.html in a web browser, e.g.: `python -m http.server` and then go to http://localhost:8000/
   (see https://github.com/mrdoob/three.js/wiki/How-to-run-things-locally)
 
 
