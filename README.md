@@ -1,20 +1,18 @@
-owncloud-simile-timeline
+owncloud-calendar-timeline
 ========================
 
-Calendar data from owncloud is exported into an xml file which can be viewed with [Simile Timeline](http://www.simile-widgets.org/timeline/)
-
-This project contains everything needed to display the timeline.
+Calendar data from owncloud is exported into a json file. The calendar events can be viewed and filtered on a standalone webpage using [Simile Exhibit3](http://simile-widgets.org/wiki/Exhibit3) with the use of JavaScript.
 
 Prerequisites
 -------------
 
 * python3
-* python3-markupsafe
+* python3-icalendar
 * python3-postgresql
 
 This should do it:
 
-  `apt-get install python3 python3-markupsafe python3-postgresql`
+  `apt-get install python3 python3-icalendar python3-postgresql`
 
 
 How to use
