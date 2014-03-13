@@ -1,0 +1,9 @@
+#main-content {
+	float:left;
+}
+#sidebar {
+	float:left;
+	clear:none;
+	width:200px;
+	margin-right:10px;
+}
