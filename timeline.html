@@ -11,46 +11,61 @@
     <script src="http://api.simile-widgets.org/exhibit/3.1.0rc/exhibit-api.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="sidebar">
-		<b>Search:</b>
-		<div ex:role="facet" ex:facetClass="TextSearch"></div>
-		<hr/>
-		<div ex:role="exhibit-facet" 
-			ex:expression=".categories" 
-			ex:facetLabel="Categories"
-			ex:height="350px"></div>
-	</div>
-    <div id="main-content">
-		<!--
-		<div ex:role="view"
-             ex:viewClass="Timeline"
-             ex:start=".start"
-             ex:bubbleWidth="150"
-             ex:bubbleHeight="150"
-             ex:timelineHeight="170"
-             ex:showSummary="false"
-             >
-			<div ex:role="lens" class="event-timeline-lens" style="display: none;">
-				<div><span ex:content=".label"></span></div>
-				<div>
-					<span ex:content=".start" class="start"></span>, 
-					<span ex:content=".end" class="end"></span>
+	<table>
+		<tr>
+			<td id="sidebar">
+				<b>Search:</b>
+				<div ex:role="facet" ex:facetClass="TextSearch"></div>
+				<hr/>
+				<div ex:role="exhibit-facet" 
+					ex:expression=".categories" 
+					ex:facetLabel="Categories"
+					ex:height="350"
+					id="categories-facet"></div>
 				</div>
-        	</div>
-		</div>
-		-->
+			</td>
+			<td id="main-content">
+				<!--
+				<div ex:role="view"
+					 ex:viewClass="Timeline"
+					 ex:start=".start"
+					 ex:bubbleWidth="150"
+					 ex:bubbleHeight="150"
+					 ex:timelineHeight="170"
+					 ex:showSummary="false"
+					 >
+					<div ex:role="lens" class="event-timeline-lens" style="display: none;">
+						<div><span ex:content=".label"></span></div>
+						<div>
+							<span ex:content=".start" class="start"></span>, 
+							<span ex:content=".end" class="end"></span>
+						</div>
+					</div>
+				</div>
+				-->
 
-		<div ex:role="viewPanel">
-            <div ex:role="view"
-                ex:label="Table"
-                ex:viewClass="Tabular"
-				ex:columns=".start, .end, .label, .location, .categories"
-				ex:columnLabels="start, end, title, location, categories"
-				ex:sortColumn="1"
-				ex:sortAscending="false"
-				ex:paginate="true"
-				></div>
-        </div>
-	</div>
+				<div ex:role="viewPanel">
+					<div ex:role="view"
+						ex:viewClass="Tile"
+						ex:orders=".start, .end, .label"
+						ex:directions="descending, descending, ascending"
+						ex:grouped="false"
+						ex:paginate="true"
+						ex:pageSize="20"
+						ex:showControls="false"
+						ex:showAll="true"
+						>
+							<div ex:role="lens" class="detail" style="display:none;">
+								<div class="title"><span ex:content=".label"></span></div>
+								<div class="date"><span ex:content=".start"></span> - <span ex:content=".start"></span></div>
+								<div class="location">Location: <span ex:content=".location"></span></div>
+								<div class="description">Description: <span ex:content=".description"></span></div>
+								<div class="categories">Categories: <span ex:content=".categories"></span></div>
+							</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

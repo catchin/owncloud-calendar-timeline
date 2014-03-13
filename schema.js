@@ -1,0 +1,7 @@
+{
+	"types": {
+		"Event": {
+			"pluralLabel": "Events"
+		}
+	}
+}

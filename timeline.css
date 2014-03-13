@@ -1,9 +1,22 @@
+body {
+	font-family: sans-serif;
+}
 #main-content {
-	float:left;
 }
 #sidebar {
-	float:left;
-	clear:none;
 	width:200px;
-	margin-right:10px;
+	vertical-align:top;
+	padding: 0 5px 0 0;
+}
+.detail {
+	border-bottom: 1px solid #ddd;
+}
+.detail .title {
+	font-weight:bold;
+}
+.detail .date {
+	float:right;
+}
+.detail .description {
+	clear:both;
 }
